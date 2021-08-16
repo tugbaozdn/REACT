@@ -4,8 +4,10 @@ export class ClassExample extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            name:props.stuff.name,
-            message:props.stuff.message
+           // name:props.stuff.name,
+           name:props.name,
+            //message:props.stuff.message
+            message:props.message
         }
     }
 

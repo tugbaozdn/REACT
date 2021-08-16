@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import App from '../App';
 
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
@@ -7,10 +7,27 @@ import FunctionExample from './function-component';
 
 function NavBar(){
 
-    const propsObject ={
-        name:"Doug",
-        message: "This is a our prop message."
+    // const propsObject ={
+    //     name:"Doug",
+    //     message: "This is a our prop message.",
+    //     //updateMessage:setMessage
+    // }
+
+    const [name, setName] =useState("Tugba");
+    const [message, setMessage] = useState("This is the default message.");
+
+    const propsObject={
+        name:name,
+        message:message,
+        updatemessage: setMessage
     }
+
+    // const propsObject={
+    //     ...propsObject,
+    //     message: "my new message..."
+    // }
+
+    console.log('navbar:',propsObject);
 
     return(
         <>
@@ -28,11 +45,13 @@ function NavBar(){
                         <App />
                     </Route>
                     <Route exact path="/classExample">
-                    <ClassExample stuff={propsObject} />
+                   {/*<ClassExample stuff={propsObject} />*/}
+                   <ClassExample {...propsObject} />
                     </Route>
-                    <Route exact path="/functionExample">
-                        
-                        <FunctionExample message="This is our prop message." name="Kyle"/>
+                  
+                    <Route exact path="/functionExample">   
+                        {/*<FunctionExample message="This is our prop message." name="Kyle"/>*/}
+                        <FunctionExample {...propsObject}/>
                     </Route>
                     
                 </Switch>
