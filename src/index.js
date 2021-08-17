@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar-component';
+//import Tweet from './Tweet';
 
 ReactDOM.render(
   <React.StrictMode>

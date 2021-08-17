@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.demo{
+
+  border: 2px solid black;
+
+} */
+
+.app{
+  min-height: 100vh;
+  height: 100vh;
+  background: rgb(117, 169, 187) ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tweet{
+
+  height: 300px;
+  width: 300px;
+  background: white;
+  border-radius: 30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+
 }

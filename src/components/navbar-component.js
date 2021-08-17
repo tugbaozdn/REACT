@@ -4,6 +4,7 @@ import App from '../App';
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ClassExample } from './class-component';
 import FunctionExample from './function-component';
+import Tweet from './Tweet';
 
 function NavBar(){
 
@@ -20,6 +21,7 @@ function NavBar(){
         name:name,
         message:message,
         updatemessage: setMessage
+    
     }
 
     // const propsObject={
@@ -35,8 +37,10 @@ function NavBar(){
             <Router>
                 <div className="Navbar">
                     <Link className="NavbarLink" to="/">App</Link>
-                    <Link className="NavbarLink" to="/classExample">Class</Link>
-                     <Link className="NavbarLink" to="/functionExample">Function</Link>
+                    <Link className="NavbarLink" to="/classExample"> Class </Link>
+                     <Link className="NavbarLink" to="/functionExample"> Function </Link>
+                     <Link className="NavbarLink" to="/Tweet"> Tweet </Link>
+
                  </div>
 
             <div className="Content">
@@ -52,6 +56,16 @@ function NavBar(){
                     <Route exact path="/functionExample">   
                         {/*<FunctionExample message="This is our prop message." name="Kyle"/>*/}
                         <FunctionExample {...propsObject}/>
+                    </Route>
+
+                    <Route exact path="/Tweet">
+                        <div className="app"> 
+                        <Tweet name="Tugba Ozden" message1="This is a random tweet" numOfLikes='1' /> 
+                        <Tweet name="Anne Gilbert" message1="I like programming." numOfLikes='100'/> 
+                        <Tweet name="Matt Ozden" message1="Reading is very special activity." numOfLikes='80'/>
+                        
+                        </div>  
+                                 
                     </Route>
                     
                 </Switch>
