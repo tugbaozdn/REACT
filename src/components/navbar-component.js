@@ -16,6 +16,24 @@ function NavBar(){
 
     const [name, setName] =useState("Tugba");
     const [message, setMessage] = useState("This is the default message.");
+    // const [isRed, setRed]=useState(false);
+    // const [count,setCount]=useState(0);
+
+
+
+    // const increment =()=>{
+    //     setCount(count+1);
+    //     setRed(!isRed);
+    // };
+
+
+    const[users, setUsers] = useState([
+        {name:'Tugba', message1:'Hello there'},
+        {name:'Anne', message1: 'I am Anne'},
+        {name: 'Zeynep', message1: 'I like reading.'}
+
+
+    ]);
 
     const propsObject={
         name:name,
@@ -23,6 +41,8 @@ function NavBar(){
         updatemessage: setMessage
     
     }
+
+
 
     // const propsObject={
     //     ...propsObject,
@@ -60,13 +80,19 @@ function NavBar(){
 
                     <Route exact path="/Tweet">
                         <div className="app"> 
-                        <Tweet name="Tugba Ozden" message1="This is a random tweet" numOfLikes='1' /> 
+                        {/*<Tweet name="Tugba Ozden" message1="This is a random tweet" numOfLikes='1' /> 
                         <Tweet name="Anne Gilbert" message1="I like programming." numOfLikes='100'/> 
                         <Tweet name="Matt Ozden" message1="Reading is very special activity." numOfLikes='80'/>
+                        <button onClick={increment}>Increment</button>
+                        <p className={isRed ? 'red' : ""}>Change my color</p>
+    <h4>{count}</h4>*/}
+
+                            {users.map(user=>(
+                                  <Tweet name={user.name} message1={user.message1}/>  
+                            ))}                        
                         
-                        </div>  
-                                 
-                    </Route>
+                        </div>                                   
+                    </Route>                    
                     
                 </Switch>
             </div>
