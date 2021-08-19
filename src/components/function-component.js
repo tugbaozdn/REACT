@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import InputForm from './input-compenent'
 import store from '../redux/store';
+import APIComponent from './api-displays';
 
 function FunctionExample(){
 
@@ -35,6 +36,7 @@ function FunctionExample(){
 
             <button style={{width: '100px'}} onClick={doClick}>Click me!</button>
             <InputForm />
+            <APIComponent/>
         </>
 
 
