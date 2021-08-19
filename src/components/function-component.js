@@ -1,15 +1,29 @@
 import React, {useState} from 'react'
-function FunctionExample(props){
+import InputForm from './input-compenent'
+import store from '../redux/store';
 
-    const [name,setName]=useState(props.name);
-    const [message,setMessage]=useState(props.message);
+function FunctionExample(){
+
+    //const [name,setName]=useState(props.name);
+    //const [message,setMessage]=useState(props.message);
 
 
-    const doClick=()=> {
+     const doClick=()=> {
         setName("Jacob");
             setMessage("This is a new message!!!");
 
-    }
+     }
+
+
+    const [name,setName] = useState(store.getState().name);
+    const [message, setMessage]=useState(store.getState().message);
+
+    const unsubscribe =store.subscribe(()=>{
+            setName(store.getState().name)
+            setMessage(store.getState().name)
+
+
+    })
     
     return(
         <>
@@ -20,7 +34,7 @@ function FunctionExample(props){
             </div>
 
             <button style={{width: '100px'}} onClick={doClick}>Click me!</button>
-
+            <InputForm />
         </>
 
 

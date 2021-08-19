@@ -14,8 +14,8 @@ function NavBar(){
     //     //updateMessage:setMessage
     // }
 
-    const [name, setName] =useState("Tugba");
-    const [message, setMessage] = useState("This is the default message.");
+    // const [name, setName] =useState("Tugba");
+    // const [message, setMessage] = useState("This is the default message.");
     // const [isRed, setRed]=useState(false);
     // const [count,setCount]=useState(0);
 
@@ -35,12 +35,12 @@ function NavBar(){
 
     ]);
 
-    const propsObject={
-        name:name,
-        message:message,
-        updatemessage: setMessage
+    // const propsObject={
+    //     name:name,
+    //     message:message,
+    //     updateMessage: setMessage
     
-    }
+    // }
 
 
 
@@ -49,7 +49,7 @@ function NavBar(){
     //     message: "my new message..."
     // }
 
-    console.log('navbar:',propsObject);
+   // console.log('navbar:',propsObject);
 
     return(
         <>
@@ -70,12 +70,12 @@ function NavBar(){
                     </Route>
                     <Route exact path="/classExample">
                    {/*<ClassExample stuff={propsObject} />*/}
-                   <ClassExample {...propsObject} />
+                   <ClassExample />
                     </Route>
                   
                     <Route exact path="/functionExample">   
                         {/*<FunctionExample message="This is our prop message." name="Kyle"/>*/}
-                        <FunctionExample {...propsObject}/>
+                        <FunctionExample />
                     </Route>
 
                     <Route exact path="/Tweet">
